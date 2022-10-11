@@ -1,0 +1,25 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-9 col-lg-12 col-xl-5 titulo">
+            <p class="typing-demo">BUSCA A TU PERSONAJE</p>
+        </div>
+      </div>
+      <div class="row  justify-content-center align-items-center">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <input type="text" name="rickMortyName" [(ngModel)]="rickMortyName" (input)="onChange()" placeholder="Ejm: morty">
+            <div *ngIf="rickMorty$ | async as personaje">
+                <div *ngFor="let item of personaje.results" class="containerImg">
+                    <img [src]="item.image" >
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+
+
